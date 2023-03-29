@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+  </head>
+
+  <body class="dark-theme">		
+    <div class="sidebar-container visible" id="sidebar-container">
+      
+			<div class="sidebar" id="sidebar">
+				<div class="hamburger" id="hamburger" onclick="sidebar();">
+					<div class="line" id="lineTop2"></div>
+					<div class="line" id="lineBottom2"></div>
+				</div>
+
+				<button><ion-icon name="add"></ion-icon> NEW REPORT</button>
+
+				<div class="section">
+					<!-- <p class="title">MAIN</p> -->
+
+					<div class="tab active">
+						<ion-icon name="home-outline"></ion-icon>
+         	 <p>Home</p>
+					</div>
+
+					<div class="tab">
+						<ion-icon name="analytics-outline"></ion-icon>
+						<p>Analytics</p>
+					</div>
+					
+					<div class="tab">
+						<ion-icon name="cash-outline"></ion-icon>
+						<p>Sales</p>
+					</div>
+
+					<div class="tab">
+						<ion-icon name="trending-down-outline"></ion-icon>
+						<p>Costs</p>
+					</div>
+
+					<div class="tab">
+						<ion-icon name="cart-outline" class="cart"></ion-icon>
+						<p>Market</p>
+					</div>
+				</div>
+
+				<div class="section middle">
+					<p class="title">PEOPLE</p>
+
+					<div class="tab">
+						<ion-icon name="people-outline"></ion-icon>
+						<p>Users</p>
+					</div>
+
+
+					<div class="tab">
+						<ion-icon name="flag-outline"></ion-icon>
+						<p>Reviews</p>
+					</div>
+
+
+					<div class="tab">
+						<ion-icon name="chatbox-ellipses-outline"></ion-icon>
+						<p>Feedback</p>
+					</div>
+				</div>
+
+				<div class="section bottom">
+					<div class="tab">
+						<ion-icon name="settings-outline"></ion-icon>
+					</div>
+
+					<label class="switch">
+						<input type="checkbox" id="theme-toggle">
+						<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+    </div>
+
+		<section class="main" id="main">
+			<div class="top">
+				<div class="hamburger" id="hamburger" onclick="sidebar()">
+					<div class="line" id="lineTop1"></div>
+					<div class="line" id="lineBottom1"></div>
+				</div>
+
+				<ion-icon name="calendar-number-outline" class="calendar"></ion-icon>
+
+				<div class="search-box">
+					<input type="text" placeholder="Search...">	
+					<ion-icon name="search"></ion-icon>
+				</div>
+
+				<div class="account">
+					<p>John Doe</p>
+
+					<div class="notification">3</div>
+					<ion-icon name="person-circle-outline"></ion-icon>
+				</div>
+			</div>
+
+			<div class="content" id="content">
+				<h1 class="greeting">Hello, <span class="accent">John Doe</span>!</h1>
+
+				<p class="subtitle">You are <span class="accent">51%</span> more productive today!</p>
+
+				<div class="row">
+					<div class="data rect">
+						<div class="container session-length">
+							<ion-icon name="hourglass-outline" class="session-length-icon"></ion-icon>							
+
+							<div class="text">
+								<h3>1.2hr</h3>
+								<p>AVG SESSION LENGTH</p>
+							</div>
+
+							<ion-icon name="open-outline" class="open"></ion-icon>
+						</div>
+
+						<table class="charts-css area multiple hide-data session-length">
+							<tbody>
+								<tr class="first">
+									<td style="--start:0.1; --size:0.5;" class="first"></td>
+									<td style="--start:0; --size:0.2;" class="second"></td>
+									<td style="--start:0.2; --size:0.3;" class="third"></td>
+								</tr>
+
+								<tr>
+									<td style="--start:0.5; --size:0.8;" class="first"></td>
+									<td style="--start:0.2; --size:0.5;" class="second"></td>
+									<td style="--start:0.3; --size:0.1;" class="third"></td>
+								</tr>
+								<tr class="last">
+									<td style="--start:0.8; --size:0.4;" class="first"></td>
+									<td style="--start:0.5; --size:0.3;" class="second"></td>
+									<td style="--start:0.1; --size:0.2;" class="third"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="small-container">
+						<div class="data small red">
+							<div class="container">
+								<ion-icon name="trending-down"></ion-icon>
+
+								<div class="text">
+									<h3>508</h3>
+									<p>LESS SESSIONS</p>
+								</div>
+
+								<ion-icon name="open-outline" class="open"></ion-icon>
+							</div>
+
+							<h1 id="23">23%</h1>	
+						</div>
+
+						<div class="data small green">
+							<div class="container">
+								<ion-icon name="trending-up"></ion-icon>
+
+								<div class="text">
+									<h3>1.2K</h3>
+									<p>MORE USERS</p>
+								</div>
+
+								<ion-icon name="open-outline" class="open"></ion-icon>
+							</div>
+
+							<h1>48%</h1>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="data rect">
+						<div class="container">								
+							<ion-icon name="people-outline" class="users-icon"></ion-icon>
+
+							<div class="text">
+								<h3>2.3K</h3>
+								<p>DAILY USERS</p>
+							</div>
+
+							<ion-icon name="open-outline" class="open"></ion-icon>
+						</div>
+
+						<table class="charts-css line users">
+							<tbody>
+								<tr>
+									<td style="--start: 0.1; --size: 0.2"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.2; --size: 0.4"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.4; --size: 0.2"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.2; --size: 0.3"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.3; --size: 0.6"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.6; --size: 0.8"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.8; --size: 1.0"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="data rect">
+						<div class="container">								
+							<ion-icon name="flash-outline" class="performance-icon"></ion-icon>
+
+							<div class="text">
+								<h3>73.5%</h3>
+								<p>PERFORMANCE</p>
+							</div>
+
+							<ion-icon name="open-outline" class="open"></ion-icon>
+						</div>
+
+						<table class="charts-css line performance">
+							<tbody>
+								<tr>
+									<td style="--start: 0.7; --size: 0.7"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.7; --size: 0.6"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.6; --size: 0.7"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.7; --size: 0.6"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.6; --size: 0.5"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.5; --size: 0.7"></td>
+								</tr>
+								<tr>
+									<td style="--start: 0.7; --size: 0.7"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="data big">
+						<div class="container sales">								
+							<ion-icon name="cash-outline" class="sales-icon"></ion-icon>
+
+							<div class="text">
+								<h3>2.1MIL</h3>
+								<p>SALES</p>
+							</div>
+
+							<ion-icon name="open-outline" class="open"></ion-icon>
+						</div>
+
+						<table class="charts-css column sales">
+							<tbody>
+								<tr>
+									<td style="--size:1.5;" class="first"></td>
+								</tr>
+								<tr>
+									<td style="--size:2;"></td>
+								</tr>
+								<tr>
+									<td style="--size:2.2;"></td>
+								</tr>
+								<tr>
+									<td style="--size:2.1;"></td>
+								</tr>
+								<tr>
+									<td style="--size:2.3;" class="last"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="rect-container">
+						<div class="data rect green">
+							<div class="container revenue">								
+								<ion-icon name="trending-up" class="revenue-icon"></ion-icon>
+
+								<div class="text">
+									<h3>$5,372,100</h3>
+									<p>REVENUE</p>
+								</div>
+									
+								<ion-icon name="open-outline" class="open"></ion-icon>
+							</div>
+							
+							<div class="numbers">
+								<h1>56%</h1>
+
+								<div class="numbers-inner">
+									<h3>$1,290,334</h3>
+									<h3>910.62</h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="data rect red">
+							<div class="container costs">								
+								<ion-icon name="trending-down" class="costs-icon"></ion-icon>
+
+								<div class="text">
+									<h3>$282,165</h3>
+									<p>COSTS</p>
+								</div>
+
+								<ion-icon name="open-outline" class="open"></ion-icon>
+							</div>
+
+							<div class="numbers">
+								<h1>4%</h1>
+
+								<div class="numbers-inner">
+									<h3>$100,782</h3>
+									<h3>300.2</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="data large">
+						<div class="container">
+							<ion-icon name="flag-outline" class="reviews-icon"></ion-icon>
+
+							<div class="text">
+								<h3>201</h3>
+
+								<p>REVIEWS</p>
+							</div>
+
+							<ion-icon name="open-outline" class="open"></ion-icon>
+						</div>
+
+						<div class="reviews">
+							<div class="review">
+								<div class="image-text-container">
+									<img src="richard.jpg">
+
+									<div class="text-container">
+										<h4>Richard Miles</h4>
+
+										<div class="stars">
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+										</div>
+									</div>
+								</div>
+
+								<p>A brilliant service! Fast, efficient, and works great! I was very impressed by it. A must-have!</p>
+							</div>
+
+							<div class="review">
+								<div class="image-text-container">
+									<img src="isabelle.jpg">
+
+									<div class="text-container">
+										<h4>Isabelle Major</h4>
+
+										<div class="stars">
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star-half"></ion-icon>
+										</div>
+									</div>
+								</div>
+
+								<p>Stunning and beautiful design. Professional service that is always here for you! Was skeptical at first, but was way better than I expected!</p>
+							</div>
+
+							<div class="review">
+								<div class="image-text-container">
+									<img src="paula.jpg">
+
+									<div class="text-container">
+										<h4>Paula Kingsley</h4>
+
+										<div class="stars">
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+
+											<ion-icon name="star"></ion-icon>
+										</div>
+									</div>
+								</div>
+
+								<p>Elegant product that just feels right; good for the environment, absolutely wonderful results, and intuitive style.</p>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <script src="script.js"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
+
+<style>
+
+
+</style>
+
+<script>
+
+var i = 0;
+
+if (screen.width <= 500) {
+	document.getElementById("sidebar-container").classList.toggle("visible");
+	document.getElementById("content").style.paddingLeft = "0";
+
+	i = 1
+}
+
+
+
+function sidebar() {
+	i++;
+
+	document.getElementById("lineTop2").style.transform = "rotate(45deg)";
+	document.getElementById("lineTop2").style.top = "5px";
+	document.getElementById("lineBottom2").style.transform = "rotate(-45deg)";
+	document.getElementById("lineBottom2").style.bottom = "5px";
+
+	document.getElementById("lineTop1").style.transform = "rotate(45deg)";
+	document.getElementById("lineTop1").style.top = "5px";
+	document.getElementById("lineBottom1").style.transform = "rotate(-45deg)";
+	document.getElementById("lineBottom1").style.bottom = "5px";
+
+
+	if (i % 2 == 0) {
+		setTimeout(() => { 
+		document.getElementById("content").style.paddingLeft = "230px";
+
+			document.getElementById("sidebar-container").classList.toggle("visible");		
+		}, 300);
+	} else {
+
+		document.getElementById("content").style.paddingLeft = "0";
+
+		document.getElementById("lineTop2").style.transform = "rotate(0)";
+		document.getElementById("lineTop2").style.top = "0";
+		document.getElementById("lineBottom2").style.transform = "rotate(0)";
+		document.getElementById("lineBottom2").style.bottom = "0";
+
+		document.getElementById("lineTop1").style.transform = "rotate(0)";
+		document.getElementById("lineTop1").style.top = "0";
+		document.getElementById("lineBottom1").style.transform = "rotate(0)";
+		document.getElementById("lineBottom1").style.bottom = "0";
+
+
+		setTimeout(() => { 
+			document.getElementById("sidebar-container").classList.toggle("visible");		
+		}, 100);
+	}
+}
+
+</script>
+
+
+
+
+
